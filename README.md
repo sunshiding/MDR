@@ -22,7 +22,7 @@ CelebA-related datasets can be downloaded from [CelebA](http://mmlab.ie.cuhk.edu
 
 ## Example Experiments
 
-This repository contains a subset of the experiments mentioned in the paper. In each folder, there are 3 scripts that one can run: `run.py` to fit the MDR; `sample.py` to (conditionally) reconstruct from samples in the latent space; and `model.py` to build the model. And more code will be released gradually.
+This repository contains a subset of the experiments mentioned in the paper. In each folder, there are 3 scripts that one can run: `run.py` to fit the MDR; `sample.py` to (conditionally) reconstruct from samples in the latent space; `model.py` to build the model. And more code will be released gradually.
 
 ### Qualitative Analysis on the MNIST-CDCB dataset
 
