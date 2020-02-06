@@ -1,10 +1,8 @@
 from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
-
 import sys
 import os
-
 import shutil
 import torch
 import torch.optim as optim
@@ -12,7 +10,7 @@ from torch.autograd import Variable
 from model import MDR
 from data import create_dataset
 from sample import visualization
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
@@ -52,13 +50,12 @@ def load_checkpoint(file_path, use_cuda=False):
 
 if __name__ == "__main__":
     import argparse
-
     parser = argparse.ArgumentParser()
     parser.add_argument('--n-latents', type=int, default=64,
                         help='size of the latent embedding [default: 64]')
     parser.add_argument('--batch-size', type=int, default=100, metavar='N',
                         help='input batch size for training [default: 100]')
-    parser.add_argument('--epochs', type=int, default=80, metavar='N',
+    parser.add_argument('--epochs', type=int, default=50, metavar='N',
                         help='number of epochs to train [default: 500]')
     parser.add_argument('--annealing-epochs', type=int, default=0, metavar='N',
                         help='number of epochs to anneal KL for [default: 200]')
@@ -68,9 +65,9 @@ if __name__ == "__main__":
                         help='how many batches to wait before logging training status [default: 10]')
     parser.add_argument('--cuda', action='store_true', default=True,
                         help='enables CUDA training [default: True]')
-    parser.add_argument('--gamma', default=10, type=float, help='Cross inference')
-    parser.add_argument('--alpha', default=10, type=float, help='Exclusive')
-    parser.add_argument('--beta', default=10, type=float, help='Shared')
+    parser.add_argument('--gamma', default=10, type=float, help='term 2')
+    parser.add_argument('--alpha', default=10, type=float, help='term 3')
+    parser.add_argument('--beta', default=10, type=float, help='term 4')
 
     args = parser.parse_args()
     args.save_path = 'paper_change'

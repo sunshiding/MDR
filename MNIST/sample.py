@@ -5,14 +5,10 @@ from __future__ import absolute_import
 import numpy as np
 import torch
 from torch.autograd import Variable
-from sklearn import manifold
-import matplotlib.pyplot as plt
 from data import create_dataset
 import torch.nn.functional as F
 from model import MDR
 from torchvision.utils import save_image
-import pandas as pd
-import os
 
 
 def fetch_mnist_image(nsamples):
